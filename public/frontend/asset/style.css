@@ -10,8 +10,8 @@
     --bg-color-light: #ffffff;
     --text-color-dark: #ffffff;
     --bg-color-dark: #1e1e1e;
-    --add-t0-card-color:#ff9f00;
-    --bay-now-color:#fb641b;
+    --add-to-card-color:#081621;
+    --bay-now-color:#3749bb;
     --line-bd-color:#f9f9f9;
     --footer-bg-color:#172337;
 }
@@ -110,16 +110,7 @@ body.night-mode {
   margin-left: -1.4em !important;
   font-size: 20px;
 }
-.night-mode .fa-bars{
-  color: #0f0f0f !important;
-  
 
-}
-.fa-bars{
-  color: #050101 ;
-  
-
-}
 
 
   ul li{
@@ -235,17 +226,25 @@ body.night-mode {
 
  /* addto cart */
  #cart{
-  background-color: var(--add-t0-card-color);
+  background-color: var(--add-to-card-color);
   font-size: 70%;
   font-weight: bold;
   box-sizing: border-box;
+  color: white;
  
+ }
+
+ #cart:hover{
+  background-color: #dce6ee;
+  color:black
  }
  #buy-now{
   background-color: var(--bay-now-color);
   font-size: 70%;
   box-sizing: border-box;
-  font-weight: bold
+  font-weight: bold;
+  color: white;
+  
  }
 
 
@@ -256,7 +255,8 @@ body.night-mode {
   transition: background-color 0.3s ease; /* Transition effect for background color */
 }
 #buy-now:hover {
-  background-color: #dd6311; /* New background color on hover */
+  background-color: #dce6ee;
+  color:black /* New background color on hover */
 }
 
 #buy-now.clicked {
@@ -285,11 +285,18 @@ footer {
 /* footer end */
 
 /* shopping card */
-.fa-cart-shopping {
-  color: #f8e6dd;
-  font-size: 1.5rem;
+.fa-cart-shopping, .fa-bag-shopping {
+ 
+  font-size: 1.2rem;
+  padding-right: 0.3rem;
 }
 
+  
+
+
+.nav-item .fa-cart-shopping{
+  font-size: 1.3rem;
+}
 
   .nav-link {
     display: flex;
@@ -300,7 +307,7 @@ footer {
     position: absolute;
     right: 14px; /* Adjust the right position as needed */
     background-color: red;
-    top: -1px;
+    top: -2px;
     color: white;
     border-radius: 50%;
     padding: 2px 6px;
@@ -393,7 +400,7 @@ footer {
 
 
   .fa-bars{
-    color: #0c0b0b !important;
+    color: #f8efef !important;
 
     position: relative;
     top: 10px;
@@ -486,3 +493,26 @@ padding: 7px 0px 8px 0px;
 
 
 
+/* for product Ratting system start*/
+.star-rating {
+ 
+  font-size: 1.5rem;
+}
+.star-rating input {
+  display: none;
+}
+.star-rating label {
+  color: #ddd;
+  font-size: 2rem;
+  padding: 0;
+  cursor: pointer;
+}
+.star-rating input:checked ~ label,
+.star-rating input:hover ~ label,
+.star-rating label:hover ~ label {
+  color: #f5c518;
+}
+
+
+
+/* for product Ratting system end */

@@ -30,7 +30,14 @@
     <!-- Scripts -->
     {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
 
+ <style>
+    nav{
+      background-color: #081621;
+    }
 
+   
+    
+   </style>
 
     <!-- Styles -->
     @livewireStyles
@@ -38,7 +45,7 @@
 <body class="font-sans antialiased">
 
 
-    <nav class="fixed-top  navba p-3 shadow  bg-light">
+    <nav class="fixed-top  navba p-3 shadow  ">
 
 
         <div class="container-fluid  ">
@@ -96,14 +103,18 @@
 
 
                     <!-- Right Section: Cart, Search, Night Mode -->
-                    <div id="account" class="d-flex align-items-center justify-content-center ">
+                    <div id="account" class="d-flex gap-2 align-items-center justify-content-center ">
 
                         @auth()
-                             <a href="">{{auth()->user()->name}}</a>
+                         <div class="login">   <a href="#" class="text-white">{{auth()->user()->name}}</a>
+                         </div>
+                           
                         @endauth
 
                         @guest
-                             <a href="{{route('login')}}">Login</a>
+                          <div class="login">    <a href="{{route('login')}} " class="text-white">Login</a>
+                         </div>
+                           
                         @endguest
 
                         
@@ -116,14 +127,11 @@
                         </div>
 
 
+
+
                             @auth()
                                 
                           
-
-
-
-
-
                         <div class="profile  ">
 
                             <div class="profile-dropdown ">
@@ -139,16 +147,50 @@
 
 
                                 <ul class="dropdown-menu border shadow-lg" aria-labelledby="dropdownMenuButton1">
-                                    <li><a class="dropdown-item" href="#">
+
+
+                                @role(['supper_admin','writter','admin'])
+
+                                  <li><a class="dropdown-item" href="{{route('dashbord.admin')}}">
 
                                             <div class="d-flex align-items-center   ">
                                                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                                <span class="m-1">profile</span>
+                                                <span class="m-1">Dashboard</span>
+                                                
                                             </div>
-
+                                            
 
 
                                         </a></li>
+
+
+                                @endrole
+
+                                @role('user')
+
+                                  <li><a class="dropdown-item" href="{{route('userdashboard.user')}}">
+
+                                            <div class="d-flex align-items-center   ">
+                                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                                <span class="m-1">Profile</span>
+                                                
+                                            </div>
+                                            
+
+
+                                        </a></li>
+
+
+                                @endrole
+
+                               
+
+
+
+                                  
+
+
+
                                     <li><a class="dropdown-item" href="#">
 
                                             <i class="fas fa-cogs fa-sm fa-fw mr-5 text-gray-400"></i>
@@ -164,34 +206,26 @@
 
 
                                         </a></li>
-                                    <li>
                                     
-                                    <a class="dropdown-item" href="#">
+                                    <li class="logout"><a class="dropdown-item" href="#">
 
-                                          
-                                              <div class="d-flex justify-center align-items-center ">
-                                              
-                                              
-                                                <div><i class="fas fa-sign-out-alt fa-sm fa-fw  text-gray-400"></i></div>
-                                                 
-                                              
-                                
-                                                    <div>
-                                                        <form method="POST" action="{{route('logout')}}" x-data>
+                                            <i class="fas fa-sign-out-alt fa-sm fa-fw  text-gray-400"></i>
+                                            Logout
+
+
+
+                                        </a></li>
+
+
+                                         <form method="POST" action="{{route('logout')}}" x-data>
                                                             @csrf
 
-                                                            <input class="form-control" type="submit" value="Sign out">
-                                                        </form></div>
-                                                    </div>
-
-                                            
+                                                            
+                                                        </form>
+                                    
 
 
 
-                                        </a>
-                                        
-                                        
-                                        </li>
 
                                 </ul>
                             </div>
@@ -593,9 +627,24 @@
 
 
 
+{{-- form submit --}}
+
+
+ $('.logout').click(function(){
+
+       $(this).next('form').submit();
+
+        console.log('hello')
+       
+    })
+
+
         })
 
     </script>
+
+
+
 
     @livewireScripts
 </body>

@@ -629,7 +629,21 @@
                                 </div>
                                 <div class="d-sm-block d-none">
                                     <p class="fw-semibold mb-0 lh-1">{{ config('app.name') }}</p>
+
+                                    @role('supper_admin')
                                     <span class="op-7 fw-normal d-block fs-11">Super Admin</span>
+                                    @endrole
+                                    @role('admin')
+                                    <span class="op-7 fw-normal d-block fs-11"> Admin</span>
+                                    @endrole
+                                    @role('writter')
+                                    <span class="op-7 fw-normal d-block fs-11">writter</span>
+                                    @endrole
+                                   
+
+                                    
+
+
                                 </div>
                             </div>
                         </a>
@@ -637,8 +651,17 @@
                         <ul class="main-header-dropdown dropdown-menu pt-0 overflow-hidden header-profile-dropdown dropdown-menu-end"
                             aria-labelledby="mainHeaderProfile">
         
-                            <li><a class="dropdown-item d-flex" href=""><i class="ti ti-logout fs-18 me-2 op-7"></i>Log
+                            <li class="logout"><a class="dropdown-item d-flex" href="#"><i class="ti ti-logout fs-18 me-2 op-7"></i>Log
                                     Out</a></li>
+
+                                <form method="POST" action="{{route('logout')}}" x-data>
+                                                            @csrf
+
+                                 </form>
+
+
+
+
                         </ul>
                     </div>
                     <!-- End::header-element -->
@@ -960,11 +983,26 @@
 
     <!-- Internal Quill JS -->
     <script src="{{ asset('admin/asset/js/quill-editor.js') }}"></script>
-    
+     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 
 
 
 </body>
+
+<script>
+
+$(document).ready(function(event){
+    $('.logout').click(function(){
+
+       $(this).next('form').submit();
+
+        console.log('hello')
+       
+    })
+})
+
+
+</script>
 
 
 </html>

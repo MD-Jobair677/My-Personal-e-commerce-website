@@ -739,10 +739,10 @@
                                     <a href="javascript:void(0)">Category</a>
                                 </li>
                                 <li class="slide">
-                                    <a href="" class="side-menu__item">Avilable Category</a>
+                                    <a href="{{route('category.store')}}" class="side-menu__item">Avilable Category</a>
                                 </li>
                                 <li class="slide">
-                                    <a href="" class="side-menu__item">Add New</a>
+                                    <a href="{{route('category.index')}}" class="side-menu__item">Add New</a>
                                 </li>
                             </ul>
                         </li>
@@ -752,18 +752,40 @@
                         <li class="slide has-sub">
                             <a href="javascript:void(0);" class="side-menu__item">
                                 <i class="bx bx-heart side-menu__icon"></i>
-                                <span class="side-menu__label">Quotes</span>
+                                <span class="side-menu__label">SubCategorie</span>
                                 <i class="fe fe-chevron-right side-menu__angle"></i>
                             </a>
                             <ul class="slide-menu child1">
                                 <li class="slide side-menu__label1">
-                                    <a href="javascript:void(0)">Quotes</a>
+                                    <a href="javascript:void(0)">SubCategorie</a>
                                 </li>
                                 <li class="slide">
-                                    <a href="" class="side-menu__item">Avilable Quotes</a>
+                                    <a href="{{route('Subcategorie.story')}}" class="side-menu__item">Avilable SubCategorie</a>
                                 </li>
                                 <li class="slide">
-                                    <a href="" class="side-menu__item">Add New</a>
+                                    <a href="{{route('Subcategorie.index')}}" class="side-menu__item">Add New</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- End::User -->
+
+
+                         <!-- Start::User -->
+                         <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="side-menu__item">
+                                <i class="bx bx-heart side-menu__icon"></i>
+                                <span class="side-menu__label">Brand</span>
+                                <i class="fe fe-chevron-right side-menu__angle"></i>
+                            </a>
+                            <ul class="slide-menu child1">
+                                <li class="slide side-menu__label1">
+                                    <a href="javascript:void(0)">Brand</a>
+                                </li>
+                                <li class="slide">
+                                    <a href="{{route('Brand.store')}}" class="side-menu__item">Avilable Brand</a>
+                                </li>
+                                <li class="slide">
+                                    <a href="{{route('Brand.index')}}" class="side-menu__item">Add New</a>
                                 </li>
                             </ul>
                         </li>
@@ -876,7 +898,7 @@
         
         <div class="main-content app-content">
             <div class="container-fluid">
-                <div class="d-md-flex d-block align-items-center justify-content-between my-4 page-header-breadcrumb">
+                <div class="d-md-flex d-block align-items-center justify-content-between  page-header-breadcrumb">
                     <h1 class="page-title fw-semibold fs-18 mb-0">@yield('title')</h1>
                     <div class="ms-md-1 ms-0">
                         <nav>
@@ -984,6 +1006,9 @@
     <!-- Internal Quill JS -->
     <script src="{{ asset('admin/asset/js/quill-editor.js') }}"></script>
      <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+
+     @stack('customJs')
 
 
 

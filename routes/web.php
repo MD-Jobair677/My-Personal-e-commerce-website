@@ -1,8 +1,12 @@
 <?php
 
-use App\Http\Controllers\Dashbord\DashbordController;
-use App\Http\Controllers\userDashboard\UserDashboardController;
+use App\Http\Controllers\Backend\BrandController;
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Dashbord\DashbordController;
+use App\Http\Controllers\Backend\SubCategorieController;
+use App\Http\Controllers\userDashboard\UserDashboardController;
 
 Route::get('/', function () {
     return view('frontend.contant.homepage');
@@ -51,5 +55,33 @@ Route::middleware('auth')->prefix('/dashboard')->controller(UserDashboardControl
 
 
 
+Route::get('/category',[CategoryController::class,'index'])->name('category.index');
+Route::get('/category-create',[CategoryController::class,'create'])->name('category.create');
+Route::get('/category-store',[CategoryController::class,'store'])->name('category.store');
+Route::get('/category-edit/{id}',[CategoryController::class,'edit'])->name('category.edit');
+Route::delete('/category-delete/{id}',[CategoryController::class,'destroy'])->name('category.delete');
 
 
+
+
+
+
+
+
+Route::get('/subcategorie',[SubCategorieController::class,'index'])->name('Subcategorie.index');
+// Route::post('/subcategorie-create',[SubCategorieController::class,'create'])->name('Subcategorie.create');
+Route::get('/subcategorie-story',[SubCategorieController::class,'story'])->name('Subcategorie.story');
+Route::get('/subcategorie-edit/{id}',[SubCategorieController::class,'edit'])->name('Subcategorie.edit');
+Route::delete('/subcategorie-delete/{id}',[SubCategorieController::class,'deleted'])->name('Subcategorie.delete');
+Route::get('/get-all-subcategories',[SubCategorieController::class,'getSubcategories'])->name('Subcategorie.get');
+
+
+
+Route::prefix('/backend/brand')->controller(BrandController::class)->name('Brand.')->group(
+    function(){
+        Route::get('/' ,'index')->name('index');
+        Route::get('/store' ,'store')->name('store');
+        // Route::get('/get-all-sub-category','getSubCategory')->name('get');
+
+    }
+);

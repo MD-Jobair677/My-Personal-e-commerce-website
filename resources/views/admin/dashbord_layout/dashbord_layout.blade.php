@@ -14,16 +14,19 @@
     <meta name="keywords" content="dating, love, dating app, programming wormhole">
 
     <!-- Favicon -->
-    <!-- <link rel="icon" href="./asset'images/brand-logos/' . 'favicon.png'" type="image/x-icon"> -->
+ 
     <link rel="icon" href="./asset/images/brand-logos/favicon.png" type="image/x-icon">
 
     <!-- Choices JS -->
-    <script src="{{ asset('admin/asset/libs/choices.js/public/assets/scripts/choices.min.js') }}"></script> -
-    <script src="./asset/libs/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script src="{{ asset('admin/asset/libs/choices.js/public/assets/scripts/choices.min.js') }}"></script> 
+
 
     <!-- Main Theme Js -->
-    <script src="../assets/js/main.js"></script>
-    <script src="../asset/js"></script>
+   
+    <script src="{{asset('admin/asset/js/main.js')}}"></script>
+
+
+  
 
     <!-- Bootstrap Css -->
     <link id="style" href="{{ asset('admin/asset/libs/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -65,7 +68,7 @@
 
 
     <!-- Choices JS -->
- <script src="{{ asset('admin/asset/libs/choices.js/public/assets/scripts/choices.min.js') }}"></script> -
+ <script src="{{ asset('admin/asset/libs/choices.js/public/assets/scripts/choices.min.js') }}"></script> 
 
 
     <!-- Choices Css -->

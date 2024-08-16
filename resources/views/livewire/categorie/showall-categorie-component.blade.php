@@ -12,7 +12,7 @@
                         <h1>Categories</h1>
                     </div>
                     <div class="">
-                        <a href="{{route('category.index')}}" class="btn btn-primary">New Category</a>
+                        <a href="{{route('category.index')}}"  class="btn btn-primary">New Category</a>
                     </div>
                    </div>
                 </div>
@@ -24,9 +24,7 @@
             <!-- Default box -->
             <div class="container-fluid">
                 <div class="card">
-                    {{-- <form wire:submit="addCategory"  method="post"> --}}
-                        <form  method="post">
-                
+                    
     
                     <div class="card-header">
                         <div class="card-tools ">

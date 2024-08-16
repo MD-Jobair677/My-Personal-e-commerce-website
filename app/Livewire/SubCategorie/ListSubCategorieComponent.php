@@ -7,7 +7,7 @@ use App\Models\Subcategorie;
 
 class ListSubCategorieComponent extends Component
 {
-    
+
     public $subcategories;
     public function mount()
     {

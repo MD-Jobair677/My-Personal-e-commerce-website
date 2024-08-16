@@ -42,6 +42,6 @@ class CreateCategorieComponent extends Component
 
     public function render()
     {
-        return view('livewire.categorie.create');
+        return view('livewire.categorie.create-categorie-component');
     }
 }

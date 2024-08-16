@@ -61,6 +61,6 @@ class CreateSubCategorieComponent extends Component
         $subcategories = Subcategorie::with('categorie')->get();
         $categories = Categorie::with('Subcategorie')->select('id', 'name')->latest()->get();
 
-        return view('livewire.Subcategorie.create-component', compact('categories', 'subcategories'));
+        return view('livewire.sub-categorie.create-sub-categorie-component', compact('categories', 'subcategories'));
     }
 }

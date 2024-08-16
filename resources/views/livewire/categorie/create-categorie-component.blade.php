@@ -1,6 +1,4 @@
-<div>
-    {{-- Nothing in the world is as soft and yielding as water. --}}
-</div>
+
 <div>
     @if (session('success'))
     <div  class="alert alert-success w-10 h-20">
@@ -16,7 +14,7 @@
                         <h1>Create Categories</h1>
                     </div>
                     <div class="">
-                        <a href="{{route('category.store')}}" class="btn btn-primary">Back</a>
+                        <a href="{{route('category.store')}}"  class="btn btn-primary">Back</a>
                     </div>
                    </div>
                 </div>
@@ -93,7 +91,7 @@
                 </div>
                 <div class="pb-5 pt-3">
                     <button type="submit" class="btn btn-primary">Create</button>
-                    <a href="" class="btn btn-outline-dark ml-3">Cancel</a>
+                    <a href="{{route('category.store')}}" class="btn btn-outline-dark ml-3">Cancel</a>
                 </div>
                 </form>
             </div>
